@@ -1,0 +1,16 @@
+(eval-exp (apply (lam "fact" "n" 
+			(ifnzero (var "n")   
+                   	(mult (var "n") (apply (var "fact") (minus (var "n") (num 1))))
+		   	(num 1)
+)) (num 6)))
+
+
+
+
+(eval-exp (apply (lam "fib" "n" (ifnzero (var "n")
+	(ifnzero(minus (var "n") (num 1)) 
+		(plus (apply (var "fib") (minus (var "n") (num 1))) (apply (var "fib") (minus (var "n") (num 2))))
+		(num 1)	
+	)
+	(num 1)
+)) (num 6)))
